@@ -19,7 +19,7 @@ export class ProductService {
         return this.http.get<IProduct[]>(this.productUrl).pipe(
           tap(data => console.log('All: ' + JSON.stringify(data))),
           catchError(this.handleError)
-        );
+        )
     }
   handleError(handleError: any): import('rxjs').OperatorFunction<IProduct[], any> {
     throw new Error('Method not implemented.');
